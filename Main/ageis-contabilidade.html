@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ágeis Contabilidade</title>
+  <link href="ageis-style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- STICKY NAVBAR -->
+  <nav id="sticky-nav" aria-label="Navegação principal">
+    <a href="#hero" class="sticky-logo">
+      <img src="images/Logo Ágeis - Escuro PNG 1.png" alt="Ágeis Contabilidade">
+    </a>
+    <div class="sticky-nav-links" src="Lo">
+      <a href="#servicos">Serviços</a>
+      <a href="#quem-somos" class="active">Quem somos?</a>
+      <a href="#fale-conosco">Fale conosco</a>
+      <!--<button type="button" class="btn-modal">Área do Cliente</button>
+    </div>-->
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div id="hero-bg"></div>
+    <img src="images/Logo Ágeis - Claro PNG.png" alt="Ágeis Contabilidade" class="hero-logo">
+    <nav class="hero-nav" aria-label="Links do topo">
+      <a href="#servicos">Serviços</a>
+      <a href="#quem-somos">Quem somos?</a>
+      <a href="#fale-conosco">Fale conosco</a>
+<!--      <button type="button" class="btn-modal">Área do Cliente</button>-->
+    </nav>
+    
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="container">
+      <div class="servicos-grid">
+        <img
+          class="servicos-img"
+          src="images/business-executive-using-digital-tablet-while-having-cup-coffee.jpg"
+          alt="Mulher usando tablet enquanto toma café em mesa de trabalho"
+        />
+        <div class="servicos-content">
+          <h2>Nossos serviços</h2>
+          <ul class="servicos-list">
+            <li>Planejamento e Transição da Reforma Tributária</li>
+            <li>Gestão de Folha de Pagamento e eSocial</li>
+            <li>Planejamento Tributário Anual</li>
+            <li>Abertura e Regularização de Empresas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos">
+    <div class="container ">
+      <div class="quem-card">
+        <div>
+          <h2>Quem somos?</h2>
+          <p>
+            A Ágeis Contabilidade une experiência de mercado e agilidade tecnológica para entregar uma contabilidade consultiva, precisa e totalmente focada em resultados. Nosso compromisso é com a saúde financeira do seu negócio e a sua tranquilidade para crescer.
+          </p>
+        </div
+        <div class="quem-img-wrap">
+          <img
+            class="quem-img"
+            src="images/looking-through-papers.jpg"
+            alt="Homem de terno analisando documentos em escritório"
+          />
+          <div class="quem-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FALE CONOSCO -->
+  <section id="fale-conosco">
+    <div class="container">
+      <div class="fale-grid">
+        <div class="fale-content">
+          <h2>Fale conosco</h2>
+          <p>Entre em contato pelo WhatsApp e tire suas dúvidas com a nossa equipe.</p>
+          <a href="https://wa.me/51992812965" class="whatsapp-btn" target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+        <div class="qr-box">
+          <div class="qr-placeholder">
+            <img src="images/6rgyqC.jpg" alt="QR Code WhatsApp" class="qr-code">
+          </div>
+          <p class="address-text">The Winner - Sala 507 R. Dr. Lauro Azambuja Centro, Guaíba - RS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Ágeis Contabilidade &nbsp;|&nbsp; Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    const stickyNav = document.getElementById('sticky-nav');
+    const hero = document.getElementById('hero');
+    const heroBg = document.getElementById('hero-bg');
+
+    // Mostrar/esconder sticky nav
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          stickyNav.classList.remove('visible');
+        } else {
+          stickyNav.classList.add('visible');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(hero);
+
+    // Parallax suave no hero
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      heroBg.style.transform = `scale(1.05) translateY(${scrollY * 0.3}px)`;
+    }, { passive: true });
+
+    // Active link no scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sticky-nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 120) {
+          current = sec.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
