@@ -38,7 +38,7 @@
     #hero-bg {
       position: absolute;
       inset: 0;
-      background: url('images/office-workers-using-finance-graphs.jpg') center/cover no-repeat;
+      background: url('images/office-workers-using-finance-graphs.webp') center/cover no-repeat;
       filter: brightness(0.35);
       transform: scale(1.25);
       transition: transform 0.025s linear;
@@ -224,7 +224,7 @@
       content: '';
       width: 10px;
       height: 10px;
-      background-image: url('images/Ellipse2.png');
+      background-image: url('images/Ellipse2.svg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -235,7 +235,7 @@
     /* ─── QUEM SOMOS ────────────────────────────────────── */
 
     #quem-somos {
-      background-image: url("images/Rectangle.png");
+      background-image: url("images/Rectangle.webp");
       background-size: 35%;
       background-position: center;
       position: relative;
